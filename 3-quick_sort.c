@@ -66,3 +66,22 @@ static void quick_sort_helper(int *array, int low, int high, size_t size)
 		quick_sort_helper(array, pivot + 1, high, size);
 	}
 }
+
+/**
+ * quick_sort - Sorts an array of integers in ascending order
+ *              using the Quick sort algorithm.
+ * @array: Pointer to the array of integers to be sorted.
+ * @size: The size of the array.
+ *
+ * Return: This function does not return a value.
+ */
+
+void quick_sort(int *array, size_t size)
+{
+	if (!array || size < 2)
+		return;
+
+	int low = 0, high = size - 1;
+
+	quick_sort_helper(array, low, high, size);
+}
