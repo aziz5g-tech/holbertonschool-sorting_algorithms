@@ -11,6 +11,7 @@
 void swap(int *array, size_t i, size_t j)
 {
 	int temp = array[i];
+	
 	array[i] = array[j];
 	array[j] = temp;
 }
@@ -79,7 +80,7 @@ static void quick_sort_helper(int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	int low = 0, high = size - 1;
-	
+
 	if (!array || size < 2)
 		return;
 	quick_sort_helper(array, low, high, size);
