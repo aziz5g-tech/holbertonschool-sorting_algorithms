@@ -46,3 +46,23 @@ static int lomuto_partition(int *array, int low, int high, size_t size)
 
 	return (i + 1);
 }
+
+/**
+ * quick_sort_helper - Helper function that sorts a portion of an array.
+ * @array: Pointer to the array of integers to be sorted.
+ * @low: The low index of the portion to be sorted.
+ * @high: The high index of the portion to be sorted.
+ * @size: The size of the array.
+ *
+ * Return: This function does not return a value.
+ */
+static void quick_sort_helper(int *array, int low, int high, size_t size)
+{
+	if (low < high)
+	{
+		int pivot = lomuto_partition(array, low, high, size);
+
+		quick_sort_helper(array, low, pivot - 1, size);
+		quick_sort_helper(array, pivot + 1, high, size);
+	}
+}
